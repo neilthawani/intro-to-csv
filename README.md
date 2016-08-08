@@ -27,7 +27,7 @@ The purpose of learning to parse CSV files is for data consolidation, manipulati
 
 A CSV, or a comma-separated value file, allows data to be saved in a simple, structured format. CSVs can be opened in word processors, IDEs, or spreadsheet programs like Microsoft Excel.
 
-By the end of this lesson, you will be able to read from and write to CSV files and brush upon data encoding and data type conversion.
+By the end of this lesson, you will be able to read from and write to CSV files. We will brush upon data encoding and data type conversion.
 
 ### Introduction to New Material (I do)
 
@@ -101,7 +101,7 @@ Data,Lieutenant Commander,2/2/2338,2379
 => #<CSV::Table mode:col_or_row row_count:9>
 ```
 
-We see that the data is stored as a ```CSV::Table``` object. We can pass in another parameter, then, called "header_converters," and set the types of the headers to :symbol.
+We see that the data is stored as a `CSV::Table` object. We can pass in another parameter, then, called `header_converters`, and set the types of the `headers` to `:symbol`.
 
 ```ruby
 data = CSV.read('guided.csv', headers: true, header_converters: :symbol)
@@ -143,9 +143,9 @@ Data,Lieutenant Commander,2/2/2338,2379
 * Parse `pair.csv` (located in this repository) line-by-line using the following options:
     - Ensure that headers are recognized by the parser.
     - Store headers as symbols instead of strings.
-    - Use 'ISO-8859-1' encoding.
-* Store the data as an array of arrays, making the following changes:
+    - Use [ISO-8859-1](https://developer.mozilla.org/en-US/docs/Web/Guide/Localizations_and_character_encodings#Details_and_browser_internals) encoding.
     - Convert all numeric strings to numeric-type variables.
+* Store the data as an array of arrays, making the following changes:
     - Convert negative percentage values to negative decimal values.
 * Write the new data to an output file called `pair_parsed.csv`.
 
@@ -185,8 +185,6 @@ Please see [this video](https://www.youtube.com/watch?v=D0nmXlTqM6E).
 * [Why do we convert strings to symbols for our CSV headers?](http://stackoverflow.com/questions/8189416/why-use-symbols-as-hash-keys-in-ruby)
 
 * [Why are we unable to read the pair.csv file initially](http://stackoverflow.com/questions/5053216/when-we-import-csv-data-how-eliminate-invalid-byte-sequence-in-utf-8)
-
-* [Why do we use `encoding: 'ISO-8859-1'` when parsing our file?](https://en.wikipedia.org/wiki/ISO/IEC_8859-1)
 
 * [Why do floats in Ruby produce numbers appended to the quotient?](http://www.rails-troubles.com/2011/12/ruby-float-quirks.html)
 
